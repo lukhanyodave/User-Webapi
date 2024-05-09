@@ -1,0 +1,22 @@
+Overview of the layers and their responsibilities in Clean Architecture for an ASP.NET Core Web API
+
+1. Presentation/Client Layer:
+— This layer contains the API controllers, models, and other related components responsible for handling incoming HTTP requests and returning responses.
+— It depends on the Application layer for business logic but does not have any knowledge of lower layers.
+— Examples: Controllers, View Models, DTOs.
+
+2. Application Layer:
+— This layer contains the business logic and orchestration of the application.
+— It defines use cases and contains application-specific rules and validation logic.
+— It depends on the Domain layer for entities and interfaces but has no knowledge of lower layers.
+— Examples: Use cases, Application services, Mappers.
+
+3. Domain Layer:
+— This layer represents the core of the application and contains domain entities, value objects, and interfaces.
+— It is independent of other layers and defines the business rules and behavior.
+— Examples: Entities, Value Objects, Interfaces, Domain Services.
+
+4. Infrastructure/Persistence Layer:
+— This layer provides implementations for the interfaces defined in the Application and Domain layers.
+— It handles external concerns such as database access, file system operations, third-party integrations, etc.
+— Examples: Database repositories, External service clients, File system access.
